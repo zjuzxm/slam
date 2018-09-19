@@ -1,0 +1,10 @@
+ptCloud_1 = pcread('E:/pcd/pcd_1/0.pcd');
+ptCloudIn = ptCloud_1;
+figure(1);
+maxNumPoints = 6;
+ptCloudOut = pcdownsample(ptCloudIn,'nonuniformGridSample',maxNumPoints);
+pcshow(ptCloudOut);
+ptCloudIn = pcdenoise(ptCloudIn);
+ptCloudOut = pcdownsample(ptCloudIn,'nonuniformGridSample',maxNumPoints);
+figure(4);
+pcshow(ptCloudOut);
